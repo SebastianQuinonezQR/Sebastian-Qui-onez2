@@ -1,0 +1,176 @@
+﻿@model Usuarios.Entities.Body.RegistrarUsuario
+
+@{
+    ViewBag.Title = "Registrar";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link href="~/Theme/assets/global/plugins/fontsGoogleApis/FontsGoogleApis.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/datatables/KeyTable/css/keyTable.dataTables.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/datatables/Editor/css/editor.dataTables.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/bootstrap-sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/jquery-multi-select/css/multi-select.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/typeahead/typeahead.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/icheck/skins/square/_all.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/amcharts/amcharts/plugins/export/export.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/css/components.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/css/plugins.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/layouts/layout/css/layout.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet">
+    <link href="~/Theme/assets/layouts/layout/css/custom.css" rel="stylesheet">
+    <link href="~/Theme/assets/global/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="~/Theme/assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" id="style_color">
+</head>
+<div class="page-wrapper">
+
+    <div class="page-header navbar navbar-fixed-top">
+        <div class="page-header-inner ">
+            <div class="top-menu">
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"> </div>
+    <div class="page-container">
+        <div class="page-content-wrapper">
+            <div style="padding-left:100px; padding-right:100px; min-height:0px;">
+                <div id="BodyApp">
+                    <div class="note note-danger bg-red bg-font-red" style="display:none" id="errorFromController">
+                        <i class="fa fa-warning"></i>
+                        <p class="inline-block" id="strErrorFromController">ok</p>
+                    </div>
+
+                    <div class="erp-box-mn-wrp">
+                        <h1 class="page-title">Registrar Usuario</h1>
+                        <div class="portlet blue box erp-portlet-form" id="FormEmpleado">
+
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-plus"></i>
+                                    <span id="titleForm"></span>
+                                </div>
+                                <div class="tools">
+                                    <a class="font-white" title="Insertar/Actualizar"><i class="fa fa-plus" id="AddEdit"></i></a>
+                                </div>
+                            </div>
+                            <div class="portlet-body form" id="FormDetail">
+
+                                <input data-val="true" data-val-number="El campo Tipo régimen debe ser un número." data-val-required="'Tipo régimen' no debe estar vacío." id="TERCOD" name="TERCOD" type="hidden" value="8095">
+                                <div class="form-body">
+                                    <div class="tabbable-line" style="padding-top:0px;">
+                                        <ul class="nav nav-tabs ">
+                                            <li class="active">
+                                                <a href="#tab_3_1" data-toggle="tab" aria-expanded="true"> Información Básica </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane padding-tb-15 active" id="tab_3_1">
+                                                <form id="form0" method="post">
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label asp-for="Nombres" class=" control-label">Nombre</label>
+                                                                        <input asp-for="Nombres" class="form-control input-circle">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label asp-for="Apellidos" class="control-label">Apellidos</label>
+                                                                        <input asp-for="Apellidos" class="form-control input-circle">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label asp-for="TipoIdentificacion" class="control-label">Tipo de Documento</label>
+                                                                        <select asp-for="TipoIdentificacion" class="form-control">
+                                                                            <option>Seleccione</option>
+                                                                            <option>CÉDULA DE CIUDADANÍA</option>
+                                                                            <option>CÉDULA DE EXTRANJERÍA</option>
+                                                                            <option>PASAPORTE</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label asp-for="NumeroIdentificacion" class="control-label">Número Documento</label>
+                                                                        <input asp-for="NumeroIdentificacion" class="form-control input-circle">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label asp-for="Email" class="control-label">Correo Electrónico</label>
+                                                                        <input type="email" asp-for="Email" class="form-control input-circle">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label asp-for="Usuario" class="control-label">Usuario</label>
+                                                                        <input asp-for="Usuario" class="form-control input-circle">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label asp-for="Pass" class="control-label">Contraseña</label>
+                                                                        <input type="password" asp-for="Pass" class="form-control input-circle">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-actions right" style="margin-top:15px;" id="BotonesTerceros">
+                                                        <button type="submit" asp-controller="RegistrarUsuario" class="btn btn-circle green margin-right-10 " title="Guardar  Empleados"><i class="fa fa-floppy-o">&nbsp;</i>Guardar</button>
+                                                        <button type="submit" asp-action="Privacy" class="btn btn-circle green margin-right-10" title="Iniciar Sesion"> Iniciar Sesion</button>
+                                                        <button type="submit" asp-action="Index" class="btn btn-circle red margin-right-10" title="Cancelar operación"> Cancelar</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="ajax_loader" id="PageLoader" style="display: none;">
+                <i class="loader" id="loader"></i>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer">
+    </div>
+
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
